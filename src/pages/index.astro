@@ -1,0 +1,13 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout>
+	<main>
+		<div x-data="{ open: false }">
+			<button @click="open = ! open">Toggle Content</button>
+			<div x-cloak x-show="open">
+				Content...
+			</div>
+		</div>
+	</main>
+</Layout>

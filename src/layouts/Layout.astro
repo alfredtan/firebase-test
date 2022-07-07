@@ -1,0 +1,41 @@
+---
+import '../assets/app.css'
+import og from '/favicon.ico'
+const base = {
+	title: 'Hogarth Worldwide',
+	description: 'Born to make the best work, brilliantly.',
+	img: og,
+	url: 'https://check-in.dev.pages/',
+	root: 'font-sans flex flex-col',
+}
+const { title, description, img, url, root } = { ...base, ...Astro.props }
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+	<title>{ title }</title>
+	<meta name ="description" content ={ description } />
+
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content={ title } />
+	<meta property="og:description" content={ description } />
+	<meta property="og:image" content={ img } />
+	<meta property="og:url" content={ url } />
+
+	<meta property="twitter:card" content="summary_large_image" />
+	<meta property="twitter:title" content={ title } />
+	<meta property="twitter:description" content={ description } />
+	<meta property="twitter:image" content={ img } />
+	<meta property="twitter:url" content={ url } />
+
+	<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class={ root }>
+	<slot />
+</body>
+</html>
